@@ -25,4 +25,17 @@ window.onload = function() {
   for (var i = 0; i < waveformTypes.length; i++) {
     waveformTypes[i].addEventListener('click', select)
   }
+
+  setInterval(function() {
+    if (!osc) {
+
+      console.log("Oscillator is stopped. Waiting for oscillator to start")
+
+    } else {
+      freqSliderVal = document.getElementsByTagName("input")[1].value
+      osc.frequency.value = freqSliderVal
+      console.log("Oscillator is playing. Frequence value is " + freqSliderVal)
+      osc.type = selectedWaveform
+    }
+  }, 50)
 }
