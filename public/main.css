@@ -1,0 +1,48 @@
+body {
+  background-color: orange;
+  font-family: "Arial";
+}
+
+div {
+  padding: 20px;
+}
+
+#sawtooth {
+  background-color: #336E91;
+}
+
+#sine {
+  background-color: #783d47;
+}
+
+#triangle {
+  background-color: #3b3040;
+}
+
+#square {
+  background-color: #b85635;
+}
+
+#oscillator-list {
+  /* Descendent Selector */
+  list-style-type: none;
+  padding-left: 0px;
+  color: white;
+}
+
+.selected-waveform {
+  outline: 2px solid #FFFFFF;
+}
+
+.osc-controls {
+  border-style: solid;
+  border-color: #BC6527;
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.application {
+  width: 550px;
+  margin: 0 auto;
+}
