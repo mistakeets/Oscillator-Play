@@ -29,13 +29,31 @@ window.onload = function() {
   setInterval(function() {
     if (!osc) {
 
-      console.log("Oscillator is stopped. Waiting for oscillator to start")
+      console.log('Oscillator is stopped. Waiting for oscillator to start')
 
     } else {
       freqSliderVal = document.getElementsByTagName("input")[1].value
       osc.frequency.value = freqSliderVal
-      console.log("Oscillator is playing. Frequence value is " + freqSliderVal)
+      console.log('Oscillator is playing. Frequence value is ' + freqSliderVal)
       osc.type = selectedWaveform
     }
   }, 50)
+
+  onOff.addEventListener('click', function() {
+
+    if (!osc) {
+      osc = audioContext.createOscillator()
+      osc.type = selectedWaveform
+      osc.frequency.value = freqSliderVal
+      osc.connect(audioContext.destination)
+      osc.start(audioContext.currentTime)
+      onOff.value = 'stop'
+      span.innerHTML = 'Click to stop oscillator'
+    } else {
+      osc.stop(audioContext.currentTime);
+      osc = false
+      onOff.value = 'start'
+      span.innerHTML = 'Click to start oscillator'
+    }
+  })
 }
