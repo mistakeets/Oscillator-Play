@@ -6,7 +6,7 @@ window.onload = function() {
   var span = document.getElementsByTagName('span')[0]
   var osc = false
   var freqSliderVal = document.getElementsByTagName('input')[1].value
-  var selectedWaveform = 'sawtooh'
+  var selectedWaveform = 'sawtooth'
   var waveformTypes = document.getElementsByTagName('li')
 
   function select() {
